@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width initial-scale=1.0">
+        <title>Cub</title>
+    </head>
+    <body>
+        <script>
+            var Cub= function (a){
+                this._a = a;
+                this.volume = function(){
+                    return "Volumul cubului este: " + this._a * this._a * this._a;
+                }
+                this.lungime = function(){
+                    return "Lungimea totala a laturilor este: " + this._a * 12;
+                }
+            }
+
+            var cub1 = new Cub(8);
+            alert(cub1.volume());
+            alert(cub1.lungime());
+
+            var cub2 = new Cub(13);
+            alert(cub2.volume());
+            alert(cub2.lungime());
+        </script>
+    </body>
+</html>

@@ -1,0 +1,54 @@
+<html>
+<head>
+    <title>jQuery Tema</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <meta charset="UTF-8">
+<body>
+    
+
+
+    <div class="ob2" style="position:relative; width: 120px; height: autox; text-align: center"> 
+        <div id="ob5" style="position:relative; width: 120px; height: 70px; background-color: red; text-align: center">
+            <P>OBIECTUL 1</P>
+        </div>
+    </div>
+
+    <div class="ob2" style="position:relative; width: 120px; background-color:green;height: 70px; text-align: center">
+        <p>OBIECTUL 2</p>
+    </div>
+
+    
+
+
+    <div id="ob4" style="position:relative; width: 120px; background-color:green;height: 70px; text-align: center">
+      <p>OBIECTUL 3</p>
+    </div>
+
+
+    <div class="ob2" style="position:relative; width: 120px; background-color:green;height: 70px; text-align: center">
+        <p>OBIECTUL 4</p>
+    </div>
+
+    <script>
+        function mainLoop(){
+        $(document).ready(function(){
+            $(".ob2").animate({left:200},3000).
+            animate({left:0},3000);
+            $("#ob5").click(function(){
+         $("#ob5").animate({height:200});
+            })
+            $("#ob4").animate({left:200},3000).
+            animate({left:0},3000);
+            $("#ob4").mouseenter(function(){
+            $("#ob4").css({"background-color":"blue"});})
+            $("#ob4").mouseleave(function(){
+            $("#ob4").css({"background-color":"green"});})
+        });
+
+
+
+        setTimeout("mainLoop()",10000);
+    }
+    
+    mainLoop();
+    </script>
