@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema</title>
+</head>
+<body>
+    <script type="text/javascript">
+    
+    function ariaPatratului(l){
+        //[code]function calculateArea(side) { if(side.lenght==0 || isNaN(side)) { return -1; } if(side < 0){ return -2; } return side*side; }[/code] Mihael Buzdugan
+        l = parseInt(l);
+        if (!Number.isInteger(l)) {
+            return -1;
+        }else if (l < 0 ){
+            return -2;
+        }else{
+    
+        A = l*l;
+        return A;}
+    }
+    for(i=1;i<=3;i++){    
+    l = prompt("Definiti latura patratului " + i + " : ");
+    if(ariaPatratului(l) == -1){
+        alert("Nu ati definit un numar!");
+        document.write("Nu ati definit un numar!" + "<br />");
+    }else if (ariaPatratului(l) == -2){
+        alert ("Nu ati definit un numar pozitiv!");
+        document.write("Nu ati definit un numar pozitiv!" + "<br />");
+    }else{
+    alert("Aria patratului " + i + " este : " + A);
+    document.write("Aria patratului " + i + " este : " + A + "<br />");}
+    }
+        
+
+    </script>
+</body>
+</html>

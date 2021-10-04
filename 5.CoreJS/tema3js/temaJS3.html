@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema3JS</title>
+</head>
+<body>
+    <select onchange="myFunction(this)">
+        <option>Audi</option>
+        <option>BMW</option>
+        <option>Fiat</option>
+        <option>Opel</option>
+        <option>Dacia</option>
+    </select>
+    <div id="selectat"></div>
+    <script type="text/javascript">
+    function myFunction(car){
+        var y = car.value;
+        x = document.getElementById('selectat');
+        x.innerHTML = y + " is selected!";
+    }
+    </script>
+</body>
+</html>
