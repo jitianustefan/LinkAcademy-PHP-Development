@@ -1,0 +1,252 @@
+@charset "utf-8";
+
+.header {
+    height:60px;
+    width: 100%;
+   
+    margin: auto;
+    text-transform: uppercase;
+    font-weight: 700;
+    background-color: white;
+    position: fixed;
+    top:0;
+    left: 0;
+    z-index:1080;
+}
+
+#logo {
+    float: left;
+    margin-top: 8px;
+    font-size: 25px;
+    color:#00A3EE;
+
+}
+.nav {
+    margin-left: 650px;
+    
+    
+}
+.nav ul li {
+    display: inline-block;
+    padding-inline-start: 40px;
+    margin-top: 15px;
+    
+}
+.backimg {
+    background-color: aqua;
+    background-image: url("../img/cover3.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+     width: 100%;
+    margin: auto;
+    height: 700px;
+    position: relative;
+    clear: both;
+}
+.primire {
+    text-align: center;
+    color:white;
+    position:absolute;
+    top: 120px;
+    left: 650px;
+    font-size:40px;
+    
+}
+.primire h1{
+    font-size:50px;
+}
+.primire h2{
+    font-family: 'Indie Flower', cursive;
+    font-size: 40px;
+}
+ul.social {
+    margin:0px;
+    padding:0px;
+}
+.social li
+{   
+   
+    display: inline-block;
+    margin-top: 20px;
+    padding-inline-start: 40px;
+   
+}
+.nav ul li a:link,
+.nav ul li a:visited {
+    color: black;
+    text-decoration:none;
+}
+.nav ul li a:hover {
+    color:#00A3EE;
+    text-decoration:none;
+}
+
+.main {
+    width: 100%;
+    max-width: 1140px;
+    margin: auto;
+}
+
+.pozaprofil{
+    
+    width: 45%;
+    margin: 10px 30px 10px 10px;
+    float: left;
+    height: auto;
+
+}
+.datepersonale {
+    display: inline-block;
+    width: 45%;
+    padding-top: 120px;
+    padding-left: 20px;
+    height:auto;
+    font-size:20px;
+    
+}
+.minicv li {
+    list-style-type:none;
+    display: block;
+    font-weight: 700;
+    padding-block: 10px;
+   
+}
+section {
+    margin-top:20px;
+}
+
+.despre {
+    
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    
+}
+.bgculoare {
+    background-color: #F0F0F0;
+}
+
+.educatie {
+   
+    float: left;
+    width:45%;
+    height: 500px;
+    margin: 20px 0px 40px 30px;
+    padding: 100px 0px 50px 10px ;
+    font-size: 16px;
+
+}
+
+.paralel li {
+   
+    background-color: white;  
+    padding: 5px; 
+
+}
+.cap {
+    font-size: 20px;
+    padding-left: 15px;
+    font-weight: 700;
+}
+.CV {
+    background-color:#F0F0F0;
+    width: 100%;
+    height: auto;
+    overflow:hidden;
+}
+.functie {
+    font-weight: 700;
+}
+.cap1 {
+    font-size: 25px;
+   
+    font-weight: 700;
+    margin-bottom: 30px;
+    display: inline-block;
+}
+.contact {
+    
+    width: 100%;
+    overflow: hidden;
+}
+.contactform {
+    
+    float:left;
+    width:45%;
+    height:500px;
+    margin: 20px 0px 40px 30px;
+    padding: 100px 0px 50px 10px ;
+    font-size: 16px;
+
+}
+
+.nume{
+    width: 188px;
+    margin: 10px 0px;
+    font-size: 15px;
+    padding: 8px 10px;
+}
+.e-mail {
+    width: 188px;
+    margin: 10px 0px 10px 22px;
+    font-size: 15px;
+    padding: 8px 10px;
+}
+.button-send {
+    width: 70px;
+    margin: 10px 0px 10px 22px;
+    font-size: 15px;
+    padding: 8px 10px;
+}
+.subiect {
+    width: 426px;
+    margin: 10px 0px;
+    font-size: 15px;
+    padding: 8px 10px;
+}
+.textlung {
+    width: 426px;
+    margin: 10px 0px;
+    font-size: 15px;
+    padding: 8px 10px;
+    height: 100px;
+    
+}
+.minicv1 li {
+    list-style-type:none;
+    display: block;
+    font-weight: 700;
+    padding-block: 15px;
+    font-size: 20px; 
+}
+ul.minicv1 { 
+    border: 1px solid rgb(133, 133, 133);
+}
+ul.socialf {
+    width: 100%;
+    margin: auto;
+    max-width: 500px;
+}
+.socialf li
+{   
+    color:white;
+    display: inline-block;
+    padding-inline-start: 40px;
+    padding-top: 90px;
+    font-size: 30px;
+    
+}
+.last {
+    width: 100%;
+    margin: auto;
+    max-width: 500px;
+    color: white;
+    margin-top: 20px;
+    padding-left: 120px;
+}
+.footer {
+    background-color: #1c1c20;
+    width: 100%;
+    height: 227px;
+    
+}
