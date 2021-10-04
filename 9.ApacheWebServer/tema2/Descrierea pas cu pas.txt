@@ -1,0 +1,65 @@
+Pasul 1:
+Cream structura directorului care va contine date pentru host-urile virtuale/site-urile web cu urm. comenzi:
+-sudo mkdir -p /var/www/itlink.edu/public_html
+
+Pasul 2:
+Permitem utilizatorilor care nu sunt utilizatori root si care au creat
+aceste directoare sa utilizeze directoarele create cu urm. comenzi:
+-sudo chown -R $USER:USER /var/www/itlink.edu/public_html
+Apoi trebuie sa permitem accesul general asupra directorului nostru unde 
+vor fi stabilite site-urile noastre web.
+-sudo chmod -R 755 /var/www
+
+Pasul 3:
+Cream fisierul index.html cu comanda:
+-sudo nano /var/www/itlink.edu/public_html/index.html
+Apoi in cadrul fisierului introducem urm. condtinu: Website - www.itlink.edu
+Salvam fisierul cu comanda Ctrl + x apoi tastam Y urmat de tasta Enter
+
+Pasul 4:
+Vom crea fisierele de configurare pentru hostul virtual 
+-sudo nano /etc/apache2/sites-available/itlink.edu.conf
+Vom introduce urm. continut:
+<VirtualHost *:80>
+ServerAdmin administrator@itlink.edu
+ServerName itlink.edu
+ServerAlias www.itlink.edu
+DocumentRoot /var/www/itlink.edu/public_html
+ErrorLog ${APACHE_LOG_DIR}/error.log
+CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+<Directory /var/www/itlink.edu>
+AllowOverride All
+</Directory>
+
+Pasul 5:
+Trebuie sa permitem si functionarea configuratiilor facute mai devreme 
+-sudo a2ensite itlink.edu
+Pentru a nu avea probleme cu confugartia default o vom dezactiva
+-sudo a2dissite 000-default.conf
+
+Pasul 6:
+Pornim firewall-ul si deschidem portul 80 pe server cu comenzile :
+-sudo ufw enable
+-sudo ufw allow 80 
+Putem verifica statusul cu comanda 
+-sudo ufw status 
+
+Pasul 7:
+Repornim serverul Apache
+-sudo systemctl restart apache2
+
+Pasul 8:
+Spunem calclatorului ca dorim ca aceste site-uri web sa se execute 
+de pe el si nu de pe alte servere
+-sudo nano /etc/hosts
+Unde vom adauga adresa IP locala si numele celor doua site-rui web 
+
+
+
+
+
+
+
+
+

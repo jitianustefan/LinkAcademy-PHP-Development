@@ -1,0 +1,57 @@
+Pentru a porni o aplicatie web in forma de Content Management System cum ar fi WordPress 
+este nevoie sa activam suportul pentru PHP si baza de date MySQL si sa avem instalat 
+serverul Apache.
+
+Instalarea PHP-ului pe distributia Ubuntu 
+
+sudo apt install php libapache2-mod-php php-opcache php-gd php-mysql php-json phpmbstring php-curl php-cli php-xml
+
+Apoi permitem functionarea lui php prin comanda : sudo a2enmod php7.2
+In cadrul fisierului dir.conf din folderul mods_endabled schimbam randul din DirectoryIndex index.html in 
+DirectoryIndex index.php index.html 
+Pentru a verifica corectitudinea instalarii vom crea un fisier php numit phpinfo.php
+in folderul /var/www/it-academy.biz cu continutul <?php phpinfo() ?>
+
+Instalarea MySQL-ulu pe distributia Ubuntu 
+
+sudo apt install mysql-server 
+
+Pentru a verifica daca serverul MySQL este instalat corespunzator folosim comanda:
+sudo mysql -u root -p 
+
+Instalarea WordPress CMS-ului 
+Pasul 1: Cream baza de date pentru acest CMS in cadrul consolei mysql :
+-CREATE DATABASE wp;
+Cream un utilizator care va putea sa utilizeze si administreze aceasta baza de date. 
+-CREATE USER 'wp'@'localhost' IDENTIFIED BY '1234Ita!';
+Trebuie sa atribuim utilizatorului drepturi asupra acestei baze si a celorlalte baze de date:
+-GRANT PRIVILEGES ON *.* TO 'wp'@'localhost';
+Iesim din consola tastand exit apoi apasam tasta Enter
+
+Pasul 2: Descarcam si dezarhivam cea mai recenta versiune stabila care este disponibila pe site-ul wordpress.org 
+pe care le vom salva in fisierul /var/www/it-academy.biz/public_html
+wget -c http://wordpress.org/latest.zip
+unzip latest.zip 
+Dupa dezarhivare se va crea automat un folder wordpress si
+ toate fisierele si folderele pentru Wordpress vor fi localizate in el.
+
+Pasul 3: Adaugam drepturile de acces grupului sau utilizatorului www-data asupra folderului wordpress, 
+pentru ca el sa fie disponibil si din exterior:
+-sudo chown -R www-data:www-data wordpress
+
+Pasul 4: Din fisierul de configurare wp-config-sample.php trebuie creat, in folderul wordpress, 
+fisierul de configurare principal pe care il vom seta in continuare pentru WordPress
+-sudo mv wp-config-sample.php wp-config.php
+In cadrul acestui fisier vom gasi functiile definite , in cadrul carora vom defini numele bazei de date, 
+numele utilizatorului si parola acestuia.
+
+Pasul 5: Urmeaza partea instalarii bazata pe web tastand urmatoarea adresa in browser:
+http://it-academy.biz/wordpress
+Se va incarca pagina de indez unde vom selecta limba in care dorim sa fie instalat WordPress
+Pe urm. pagina trb. sa introducem datle privind pagina web propriu-zisa, datele pentru accesul la panoul de administrator
+al acestui site.
+Pe urm. ecran ar trb sa primim mesajul privind succesul instalarii si butonul Log In.
+Dupa introducerea datlor alese vom da clic pe log in si vom fi logati la panoul de administrare.
+
+
+

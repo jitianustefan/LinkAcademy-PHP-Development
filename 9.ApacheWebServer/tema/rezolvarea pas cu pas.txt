@@ -1,0 +1,92 @@
+Subpunctul a 
+
+Pasul 1:
+Deschidem terminalul in Ubuntu si efectuam comenzile de update si upgrade pentru a avea un sist. up-to-date complet:
+-sudo apt update
+-sudo apt upgrade
+Pasul 2:
+Instalarea serverului web Apache se face cu comanda:
+-sudo apt install apache2
+Confirmam cu Y si tasta enter instalarea serverului web Apache
+Pasul 3:
+Urmeaza sa configuram firewall-ul Ubuntu pentru a permite comunicarea cu serverul web Apache.
+Vom face aceasta folosind comenzile:
+-sudo ufw app list;
+-sudo ufw app info "Apache Full";
+-sudo ufw allow in "Apache Full"
+Primele doua comenzi ne ajuta sa verificam daca profilurile sunt instalate in sistem.
+Iar cu cea de-a treia comanda permitem serverului web Apache sa comunice pe acest sist cu clientii.
+
+Subpunctul b
+
+Pasul 1:
+Valoarea implicita a directorului DocumentRoot este /var/www/html.
+Putem folosi si comanda pentru a afla cu exactitate DocumentRoot-ul pentru Ubuntu.
+-grep -i 'DocumentRoot' /etc/apache2/sites-available/000-default.conf
+
+Pasul 2:
+Pentru a crea directoarele folosim comanda mkdir:
+-sudo mkdir /var/www/html/webtest1
+Apoi accesam fisierul cu comanda cd:
+-cd /var/www/html/webtest1
+Acum putem crea si cel de-al doilea fisier.
+-sudo mkdir webtest2
+
+Pasul 3:
+Crearea fisierelor .htaccess se face cu comanda:
+-sudo touch .htaccess
+Se va crea cate un fisier .htaccess pentru fiecare dintre cele doua directoare.
+
+Pasul 4:
+Pentru fisierul .htaccess din primul director webteste1 il deschidem pentru al edita cu comanda:
+-sudo nano .htacces
+Apoi il vom completa cu urmatorul cod:
+AuthType Basic
+AuthName "Please enter user name and password"
+AuthUserFile /usr/local/etc/password2
+Require user stefan1
+Se salveaza cu comanda Ctrl + x,tastam Y si apoi apasam Enter.
+Mergem in directorul webtest2 si creeam fisierul .htacces cu urmatorul continut:
+AuthType Basic
+AuthName "Please enter user name and password"
+AuthUserFile /usr/local/etc/password
+Require user stefan2
+
+Pasul 5:
+Utilizand comanda htpasswd vom creea un cont de utilizator "stefan1" pentru limitarea accesului
+ unei anumite parti a prezentarii web.
+-sudo htpasswd -c /usr/local/etc/password stefan1
+Dupa aceasta coamanda ni se va solicita o parola care va fi introdusa de doua ori.
+Apoi vom crea un nou fisier in diredtorul /usr/local/etc numit password2 cu comanda:
+-sudo mkdir /usr/local/etc/password2
+Vom mai repeta inca o data pasul 5 pentru a creea un utilizator "stefan2" si pentru al doliea fisier webtest2
+de data aceasta user-ul si parola salvandu-se in fisierul password2
+Pasul 6:
+In fisierul principal de configurare al serverului modificam directiva AllowOverride None la AllowOverride All
+
+<Directory /var/www/>
+Options Indexes FollowSymLinks
+AllowOverride All
+Require all granted
+</Directory>
+Pasul 7:
+
+Trebuie sa aprobam utilizarea modului rewrite intr-un fisier de configurare suplimentar :
+-sudo nano /etc/apache2/sites-enabled/000-default.conf
+La finalul fisierului adaugam urm. continut :
+
+<Directory /var/www/html>
+AllowOverride All
+</Directory>
+
+Pasul 8:
+Activam modulul rewrite din cadrul configurari serverului web Apache cu comanda 
+-sudo a2enmod rewrite
+Dupa care com reporni serverul web Apache 
+-sudo systemctl restart apache2
+
+
+
+
+
+
