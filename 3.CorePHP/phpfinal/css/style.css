@@ -1,0 +1,40 @@
+
+body{
+    background-color:grey;
+}
+
+.wrap {
+    
+    margin: auto;
+    width: 500px;
+}
+.search {
+    border-radius: 5%;
+    background-color: beige;
+    margin: auto;
+    padding:20px;
+}
+
+.meniu li {
+    font-size: 35px;
+    display: inline-block;
+    padding:10px;
+    
+}
+
+.result {
+    background-color: beige;
+    border-radius: 5%;
+    width: 480px;
+    padding: 10px;
+    margin: 10px 0px;
+    
+}
+.mesaje {
+    background-color: coral;
+    color:white;
+    font-weight: 700;
+    border:1px solid black;
+    border-radius: 5%;
+    text-align: center;
+}
