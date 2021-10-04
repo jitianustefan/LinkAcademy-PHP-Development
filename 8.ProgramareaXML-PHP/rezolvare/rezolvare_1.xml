@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<adresses>
+    <adress id="1">
+        <title>Feed 1</title>
+        <value>feed1.xml</value>
+    </adress>
+    <adress id="2">
+        <title>Feed 2</title>
+        <value>feed2.xml</value>
+    </adress>
+    <adress id="3">
+        <title>Feed 3</title>
+        <value>feed3.xml</value>
+    </adress>
+</adresses>

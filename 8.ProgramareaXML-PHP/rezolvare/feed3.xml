@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+
+
+<news>
+    <noutati id="1">
+        <title>Feed3.1</title>
+        <description>Success Load feed3</description>
+    </noutati>
+    <noutati id="2">
+        <title>Feed3.2</title>
+        <description>Success Load feed3</description>
+    </noutati>
+    <noutati id="3">
+        <title>Feed3.3</title>
+        <description>Success Load feed3</description>
+    </noutati>
+</news>
